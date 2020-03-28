@@ -6,9 +6,9 @@ This script then looks up title, length, username etc. of any given youtube URL.
 
 It requires that the user create their own Google YouTube API key.
 
-This is the info we get back from youtube 
+This is the info we get back from youtube from a part=snippet URL like the following:
 https://www.googleapis.com/youtube/v3/videos?part=snippet&id=ve2pmm5JqmI&key={your_api_key}
-
+you can see that there is no runtime in this one.  
 {
  "kind": "youtube#videoListResponse",
  "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/EsNIrYZAY41gHlPRkEdbPGFrRUI\"",
@@ -84,3 +84,32 @@ https://www.googleapis.com/youtube/v3/videos?part=snippet&id=ve2pmm5JqmI&key={yo
   }
  ]
 }
+
+A part= contentDetail URL will get the runtime of the video
+https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=ve2pmm5JqmI&key={your_api_key}
+```
+{
+ "kind": "youtube#videoListResponse",
+ "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/CeBtFO_ZBMDkJDfXg05wZso-llQ\"",
+ "pageInfo": {
+  "totalResults": 1,
+  "resultsPerPage": 1
+ },
+ "items": [
+  {
+   "kind": "youtube#video",
+   "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/b62xyBfaK1O-p3XqydXHz0ww5HI\"",
+   "id": "ve2pmm5JqmI",
+   "contentDetails": {
+    "duration": "PT12M34S",
+    "dimension": "2d",
+    "definition": "hd",
+    "caption": "false",
+    "licensedContent": true,
+    "projection": "rectangular"
+   }
+  }
+ ]
+}
+```
+
