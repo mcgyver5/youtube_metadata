@@ -9,6 +9,10 @@ It requires that the user create their own Google YouTube API key.
 This is the info we get back from youtube from a part=snippet URL like the following:
 https://www.googleapis.com/youtube/v3/videos?part=snippet&id=ve2pmm5JqmI&key={your_api_key}
 you can see that there is no runtime in this one.
+
+based on my reading of the docs, the API key has a limit of 1,000,000 units per day.
+each time this script is run on one video, it takes 6 units.  so, you should be able to process roughly 160,000 video URLs per day with this. 
+
 ```
 {
  "kind": "youtube#videoListResponse",
@@ -113,4 +117,6 @@ https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=ve2pmm5JqmI&
  ]
 }
 ```
+Finally, to get likes and dislikes, views and # of comments:
+https://www.googleapis.com/youtube/v3/videos?part=statistics&id=ve2pmm5JqmI&key={your_api_key}
 
