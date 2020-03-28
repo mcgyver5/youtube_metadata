@@ -8,7 +8,8 @@ It requires that the user create their own Google YouTube API key.
 
 This is the info we get back from youtube from a part=snippet URL like the following:
 https://www.googleapis.com/youtube/v3/videos?part=snippet&id=ve2pmm5JqmI&key={your_api_key}
-you can see that there is no runtime in this one.  
+you can see that there is no runtime in this one.
+```
 {
  "kind": "youtube#videoListResponse",
  "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/EsNIrYZAY41gHlPRkEdbPGFrRUI\"",
@@ -84,7 +85,7 @@ you can see that there is no runtime in this one.
   }
  ]
 }
-
+```
 A part= contentDetail URL will get the runtime of the video
 https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=ve2pmm5JqmI&key={your_api_key}
 ```
